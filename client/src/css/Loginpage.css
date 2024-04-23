@@ -1,0 +1,15 @@
+.container2 {
+  
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     
+ 
+     .login-page {
+       background-image: url('../assest/big-city.jpg');
+       background-size: cover;
+       background-position: center;
+     }
+     
+   

@@ -5,7 +5,6 @@ import Loginpage from './Compontes/Loginpage';
 import Propertylist from './Compontes/Propertylist';
 import SearchBar from './Compontes/SearchBar';
 import ContactForm from './Compontes/ContactForm';
-
 import Bottomcpt from './Compontes/Bottomcpt';
 
 function App() {
