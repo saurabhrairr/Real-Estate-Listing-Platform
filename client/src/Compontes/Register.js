@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "../css/Register.css"
 
 const Register = () => {
   const navigate = useNavigate();

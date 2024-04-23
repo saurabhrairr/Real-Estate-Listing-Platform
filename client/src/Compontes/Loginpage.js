@@ -26,7 +26,7 @@ const Loginpage = ({ setToken }) => {
 
 
       localStorage.setItem('jwtToken', token);
-      console.log(token);
+      // console.log(token);
    
 
       Swal.fire({

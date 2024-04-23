@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../css/ContactForm.css';
-
+import bigCityImage from '../assest/big-city.jpg'; 
+import Swal from 'sweetalert2';
 const ContactForm = () => {
     const [formData, setFormData] = useState({
         propertype: '',
@@ -10,6 +11,7 @@ const ContactForm = () => {
         message: '',
         contact: ''
     });
+    const [loading, setLoading] = useState(false); // State variable for loading state
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -20,6 +22,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); // Set loading state to true
         try {
             const token = localStorage.getItem('jwtToken');
             const response = await axios.post('http://localhost:8004/api/listings/Contacts', formData, {
@@ -35,14 +38,27 @@ const ContactForm = () => {
                 message: '',
                 contact: ''
             });
+            // Show success message using SweetAlert
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: response.data.message,
+            });
         } catch (error) {
             setErrorMessage('Failed to submit contact form. Please try again later.');
             console.error('Error submitting contact form:', error);
+            // Show error message using SweetAlert
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Failed to submit contact form. Please try again later.',
+            });
         }
+        setLoading(false); // Set loading state to false after submission
     };
-
     return (
-        <div className="contact-form-container">
+        <div className="contact-form-container" style={{ backgroundImage: `url(${bigCityImage})` }}>
+      
             <h2>Contact Us</h2>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">

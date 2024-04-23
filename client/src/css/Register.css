@@ -1,0 +1,13 @@
+.container1 {
+       /* Center align content vertically */
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       background-image: url('../assest/big-city.jpg'); /* Corrected path */
+       background-size: cover;
+       background-position: center;
+     }
+     
+    
+
+     

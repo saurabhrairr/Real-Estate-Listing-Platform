@@ -2,12 +2,14 @@
        max-width: 600px;
        margin: 0 auto;
        padding: 20px;
+      
    }
    
    .contact-form {
        display: grid;
        grid-template-columns: 1fr;
        gap: 10px;
+     ;
    }
    
    .form-group {
