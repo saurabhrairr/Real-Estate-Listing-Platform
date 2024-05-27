@@ -33,7 +33,6 @@ app.use("/api/listings",Listingroute)
 
 
 
-app.use('/profile', express.static('upload/images'));
 
 function errHandler(err, req, res, next) {
     if (err instanceof multer.MulterError) {

@@ -1,13 +1,9 @@
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate,useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import "../css/Loginpage.css"
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Loginpage = ({ setToken }) => {
   const navigate = useNavigate();
@@ -24,10 +20,8 @@ const Loginpage = ({ setToken }) => {
 
        const { token } = response.data;
 
-
       localStorage.setItem('jwtToken', token);
       // console.log(token);
-   
 
       Swal.fire({
         icon: 'success',
@@ -38,7 +32,7 @@ const Loginpage = ({ setToken }) => {
       navigate('/PropertyList', );
     } catch (error) {
       console.error('Login failed', error.response?.data?.error || 'Internal Server Error');
-      
+
       // Show SweetAlert error message
       Swal.fire({
         icon: 'error',
